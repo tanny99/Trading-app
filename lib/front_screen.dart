@@ -1,3 +1,4 @@
+import 'package:app/constants.dart';
 import 'package:flutter/material.dart';
 import 'DropDownButton.dart';
 import 'slider.dart';
@@ -50,40 +51,40 @@ class front_screen extends StatelessWidget {
 
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(12.0),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left:46,right: 46 ),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 2),
-                        Text('7',style: TextStyle(fontSize: 18),),
-                        SizedBox(height: 2),
-                        Text('Buy',style: TextStyle(fontSize: 18),),
-                        SizedBox(height: 2)
-                      ],
-                    ),
+                  Column(
+                    children: [
+                      SizedBox(height: 2),
+                      Text('7',style: TextStyle(fontSize: 18),),
+                      SizedBox(height: 2),
+                      Text('Buy',style: TextStyle(fontSize: 18),),
+                      SizedBox(height: 2)
+                    ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left:46,right: 46 ),
-                    child: Column(
+                  SizedBox(width: Responsive.width(30, context),),
+                  Column(
 
-                      children: [
-                        Text('-',style: TextStyle(fontSize: 18),),
-                        Text('Neutral',style: TextStyle(fontSize: 18),),
-                      ],
-                    ),
+                    children: [
+                      SizedBox(height: 2),
+                      Text('-',style: TextStyle(fontSize: 18),),
+                      SizedBox(height: 2),
+                      Text('Neutral',style: TextStyle(fontSize: 18),),
+                      SizedBox(height: 2),
+                    ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left:46,right: 46 ),
-                    child: Column(
+                  SizedBox(width: Responsive.width(30, context),),
+                  Column(
 
-                      children: [
-                        Text('5',style: TextStyle(fontSize: 18),),
-                        Text('Sell',style: TextStyle(fontSize: 18),),
-                      ],
-                    ),
+                    children: [
+                      SizedBox(height: 2),
+                      Text('5',style: TextStyle(fontSize: 18),),
+                      SizedBox(height: 2),
+                      Text('Sell',style: TextStyle(fontSize: 18),),
+                      SizedBox(height: 2),
+                    ],
                   ),
                 ],
               ),
@@ -131,40 +132,40 @@ class front_screen extends StatelessWidget {
             ),
 
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(12.0),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left:46,right: 46 ),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 2),
-                        Text('1',style: TextStyle(fontSize: 18),),
-                        SizedBox(height: 2),
-                        Text('Buy',style: TextStyle(fontSize: 18),),
-                        SizedBox(height: 2)
-                      ],
-                    ),
+                  Column(
+                    children: [
+                      SizedBox(height: 2),
+                      Text('1',style: TextStyle(fontSize: 18),),
+                      SizedBox(height: 2),
+                      Text('Buy',style: TextStyle(fontSize: 18),),
+                      SizedBox(height: 2)
+                    ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left:46,right: 46 ),
-                    child: Column(
+                  SizedBox(width: Responsive.width(30, context),),
+                  Column(
 
-                      children: [
-                        Text('1',style: TextStyle(fontSize: 18),),
-                        Text('Neutral',style: TextStyle(fontSize: 18),),
-                      ],
-                    ),
+                    children: [
+                      SizedBox(height: 2),
+                      Text('1',style: TextStyle(fontSize: 18),),
+                      SizedBox(height: 2),
+                      Text('Neutral',style: TextStyle(fontSize: 18),),
+                      SizedBox(height: 2),
+                    ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left:46,right: 46 ),
-                    child: Column(
+                  SizedBox(width: Responsive.width(30, context),),
+                  Column(
 
-                      children: [
-                        Text('9',style: TextStyle(fontSize: 18),),
-                        Text('Sell',style: TextStyle(fontSize: 18),),
-                      ],
-                    ),
+                    children: [
+                      SizedBox(height: 2),
+                      Text('9',style: TextStyle(fontSize: 18),),
+                      SizedBox(height: 2),
+                      Text('Sell',style: TextStyle(fontSize: 18),),
+                      SizedBox(height: 2),
+                    ],
                   ),
                 ],
               ),
