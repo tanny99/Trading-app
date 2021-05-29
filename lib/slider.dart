@@ -2,7 +2,7 @@ import 'constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'buttons.dart';
-
+import 'buttonX.dart';
 class _SliderIndicatorPainter extends CustomPainter {
   final double position;
   _SliderIndicatorPainter(this.position);
@@ -52,7 +52,7 @@ class _ColorPickerState extends State<ColorPicker> {
     if (position < 0) {
       position = 0;
     }
-    print("New pos: $position");
+    // print("New pos: $position");
     setState(() {
       _colorSliderPosition = position;
       _currentColor = _calculateSelectedColor(_colorSliderPosition);
@@ -67,9 +67,9 @@ class _ColorPickerState extends State<ColorPicker> {
     setState(() {
       _shadeSliderPosition = position;
       _shadedColor = _calculateShadedColor(_shadeSliderPosition);
-      print(
-          "r: ${_shadedColor.red}, g: ${_shadedColor.green}, b: ${_shadedColor
-              .blue}");
+      // print(
+      //     "r: ${_shadedColor.red}, g: ${_shadedColor.green}, b: ${_shadedColor
+      //         .blue}");
     });
   }
 
@@ -115,9 +115,9 @@ class _ColorPickerState extends State<ColorPicker> {
     //determine color
     double positionInColorArray =
     (position / widget.width * (_colors.length - 1));
-    print(positionInColorArray);
+    // print(positionInColorArray);
     int index = positionInColorArray.truncate();
-    print(index);
+    // print(index);
     double remainder = positionInColorArray - index;
     if (remainder == 0.0) {
       _currentColor = _colors[index];
@@ -153,7 +153,7 @@ class _ColorPickerState extends State<ColorPicker> {
             child: GestureDetector(
               behavior: HitTestBehavior.opaque,
               onHorizontalDragStart: (DragStartDetails details) {
-                print("_-------------------------STARTED DRAG");
+                // print("_-------------------------STARTED DRAG");
                 _colorChangeHandler(details.localPosition.dx);
               },
               onHorizontalDragUpdate: (DragUpdateDetails details) {
@@ -184,31 +184,31 @@ class _ColorPickerState extends State<ColorPicker> {
           Column(
 
             children: [
-              buttons(text: '1 MIN',
+              buttonsX(text: '1 MIN',
+                  borderColor: Colors.white,
+                  bodyColor: Colors.black,time: '1min',),
+              buttonsX(text: '5 MIN',time: '5min',
                   borderColor: Colors.white,
                   bodyColor: Colors.black),
-              buttons(text: '5 MIN',
+              buttonsX(text: '15 MIN',time: '15min',
                   borderColor: Colors.white,
                   bodyColor: Colors.black),
-              buttons(text: '15 MIN',
+              buttonsX(text: '30 MIN',time: '30min',
                   borderColor: Colors.white,
                   bodyColor: Colors.black),
-              buttons(text: '30 MIN',
+              buttonsX(text: '1 HR',time: '1hour',
                   borderColor: Colors.white,
                   bodyColor: Colors.black),
-              buttons(text: '1 HR',
+              buttonsX(text: '5 HR',time: '5hour',
                   borderColor: Colors.white,
                   bodyColor: Colors.black),
-              buttons(text: '5 HR',
+              buttonsX(text: '1 DAY',time: 'daily',
                   borderColor: Colors.white,
                   bodyColor: Colors.black),
-              buttons(text: '1 DAY',
+              buttonsX(text: '1 WK',time: 'weekly',
                   borderColor: Colors.white,
                   bodyColor: Colors.black),
-              buttons(text: '1 WK',
-                  borderColor: Colors.white,
-                  bodyColor: Colors.black),
-              buttons(text: '1 MON',
+              buttonsX(text: '1 MON',time: 'monthly',
                   borderColor: Colors.white,
                   bodyColor: Colors.black),
             ],

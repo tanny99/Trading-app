@@ -8,6 +8,14 @@ class table1 extends StatelessWidget {
   table1({@required this.text1,@required this.text2,@required this.text3,@required this.color});
   @override
   Widget build(BuildContext context) {
+    List<MaterialColor> cc=[Colors.red,Colors.blue];
+    int i=0;
+    if(text3=='Sell'){
+      i=0;
+    }
+    else{
+      i=1;
+    }
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
@@ -20,7 +28,7 @@ class table1 extends StatelessWidget {
                 children: [
                   Text(text1,textAlign: TextAlign.left,),
                   Text(text2,textAlign: TextAlign.center,),
-                  Text(text3,style: TextStyle(color: color),textAlign: TextAlign.right,)
+                  Text(text3,style: TextStyle(color: cc[i]),textAlign: TextAlign.right,)
                 ]
               )
 
@@ -40,6 +48,20 @@ class table2 extends StatelessWidget {
   table2({@required this.text1,@required this.text2,@required this.text3,@required this.color});
   @override
   Widget build(BuildContext context) {
+    List<MaterialColor> cc=[Colors.red,Colors.blue,Colors.yellow,Colors.grey];
+    int i=0;
+    if(text3=='Sell'){
+      i=0;
+    }
+    else if(text3=='Buy'){
+      i=1;
+    }
+    else if(text3=='Neutral'){
+      i=2;
+    }
+    else{
+      i=3;
+    }
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
@@ -52,7 +74,7 @@ class table2 extends StatelessWidget {
                   children: [
                     Opacity(opacity: 0.6,child: Text(text1,textAlign: TextAlign.left,)),
                     Text(text2,textAlign: TextAlign.center,),
-                    Text(text3,textAlign: TextAlign.right,style: TextStyle(color: color),)
+                    Text(text3,textAlign: TextAlign.right,style: TextStyle(color: cc[i]),)
                   ]
               )
 

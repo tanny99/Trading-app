@@ -4,9 +4,19 @@ import 'DropDownButton.dart';
 import 'slider.dart';
 import 'buttons.dart';
 import 'tables.dart';
-class front_screen extends StatelessWidget {
+import 'brain.dart';
+class front_screen extends StatefulWidget {
+  @override
+  _front_screenState createState() => _front_screenState();
+}
+
+
+
+class _front_screenState extends State<front_screen> {
+
   @override
   Widget build(BuildContext context) {
+    // print('${Adata['buy']}');
     return Scaffold(
       backgroundColor: Colors.black,
         body: ListView(
@@ -30,7 +40,9 @@ class front_screen extends StatelessWidget {
                   child: Center(child: Text('Summary',style: TextStyle(fontSize: 16,color: Color(0xffDEDEDE)),)),
                 )
               ],
-            ),
+           ),
+
+
 
             ColorPicker(200),
 
@@ -45,11 +57,7 @@ class front_screen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 16),
-            Padding(
-              padding: const EdgeInsets.only(left: 170.0,right: 170),
-              child: buttons(text: 'BUY', bodyColor: Colors.blue,borderColor: Colors.blue,),
-
-            ),
+            Center(child: buttons(text: '$Adata5', bodyColor: Colors.blue,borderColor: Colors.blue,)),
             Padding(
               padding: const EdgeInsets.all(12.0),
               child: Row(
@@ -58,7 +66,7 @@ class front_screen extends StatelessWidget {
                   Column(
                     children: [
                       SizedBox(height: 2),
-                      Text('7',style: TextStyle(fontSize: 18),),
+                      Text('${Adata['buy']}',style: TextStyle(fontSize: 18),),
                       SizedBox(height: 2),
                       Text('Buy',style: TextStyle(fontSize: 18),),
                       SizedBox(height: 2)
@@ -69,7 +77,7 @@ class front_screen extends StatelessWidget {
 
                     children: [
                       SizedBox(height: 2),
-                      Text('-',style: TextStyle(fontSize: 18),),
+                      Text('${Adata['neutral']}',style: TextStyle(fontSize: 18),),
                       SizedBox(height: 2),
                       Text('Neutral',style: TextStyle(fontSize: 18),),
                       SizedBox(height: 2),
@@ -80,7 +88,7 @@ class front_screen extends StatelessWidget {
 
                     children: [
                       SizedBox(height: 2),
-                      Text('5',style: TextStyle(fontSize: 18),),
+                      Text('${Adata['sell']}',style: TextStyle(fontSize: 18),),
                       SizedBox(height: 2),
                       Text('Sell',style: TextStyle(fontSize: 18),),
                       SizedBox(height: 2),
@@ -116,20 +124,17 @@ class front_screen extends StatelessWidget {
                 ),
               ),
             ),
-            table1(text1: 'MA5',text2: '465.28',text3: 'SELL',color: Colors.red,),
-            table1(text1: 'MA10',text2: '465.28',text3: 'SELL',color: Colors.red,),
-            table1(text1: 'MA20',text2: '465.28',text3: 'BUY',color: Colors.blue,),
-            table1(text1: 'MA50',text2: '465.28',text3: 'BUY',color: Colors.blue,),
-            table1(text1: 'MA100',text2: '465.28',text3: 'SELL',color: Colors.red,),
-            table1(text1: 'MA200',text2: '465.28',text3: 'BUY',color: Colors.blue,),
+            table1(text1: 'MA5',text2: '${Adata2[0]['value']}',text3: '${Adata2[0]['type']}',color: Colors.red,),
+            table1(text1: 'MA10',text2: '${Adata2[1]['value']}',text3: '${Adata2[1]['type']}',color: Colors.red,),
+            table1(text1: 'MA20',text2: '${Adata2[2]['value']}',text3: '${Adata2[2]['type']}',color: Colors.blue,),
+            table1(text1: 'MA50',text2: '${Adata2[3]['value']}',text3: '${Adata2[3]['type']}',color: Colors.blue,),
+            table1(text1: 'MA100',text2: '${Adata2[4]['value']}',text3: '${Adata2[4]['type']}',color: Colors.red,),
+            table1(text1: 'MA200',text2: '${Adata2[5]['value']}',text3: '${Adata2[5]['type']}',color: Colors.blue,),
             Padding(
               padding: const EdgeInsets.only(left: 16,right: 16),
               child: Container(height: 48,width: 328,child: Center(child: Text('Technical Indicators',style:TextStyle(fontSize: 16)))),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 150.0,right: 150),
-              child: buttons(text: 'STRONG SELL', borderColor: Color(0xffFF2E50), bodyColor:  Color(0xffFF2E50)),
-            ),
+            Center(child: buttons(text: '$Adata6', bodyColor: Colors.blue,borderColor: Colors.blue,)),
 
             Padding(
               padding: const EdgeInsets.all(12.0),
@@ -139,7 +144,7 @@ class front_screen extends StatelessWidget {
                   Column(
                     children: [
                       SizedBox(height: 2),
-                      Text('1',style: TextStyle(fontSize: 18),),
+                      Text('${Adata['buy']}',style: TextStyle(fontSize: 18),),
                       SizedBox(height: 2),
                       Text('Buy',style: TextStyle(fontSize: 18),),
                       SizedBox(height: 2)
@@ -150,7 +155,7 @@ class front_screen extends StatelessWidget {
 
                     children: [
                       SizedBox(height: 2),
-                      Text('1',style: TextStyle(fontSize: 18),),
+                      Text('${Adata['neutral']}',style: TextStyle(fontSize: 18),),
                       SizedBox(height: 2),
                       Text('Neutral',style: TextStyle(fontSize: 18),),
                       SizedBox(height: 2),
@@ -161,7 +166,7 @@ class front_screen extends StatelessWidget {
 
                     children: [
                       SizedBox(height: 2),
-                      Text('9',style: TextStyle(fontSize: 18),),
+                      Text('${Adata['sell']}',style: TextStyle(fontSize: 18),),
                       SizedBox(height: 2),
                       Text('Sell',style: TextStyle(fontSize: 18),),
                       SizedBox(height: 2),
@@ -188,18 +193,18 @@ class front_screen extends StatelessWidget {
                 ),
               ),
             ),
-            table2(text1: 'RSI',text2: '-53.6549',text3: 'NEUTRAL',color: Colors.yellow,),
-            table2(text1: 'STOCH (9,6)',text2: '-53.6549',text3: 'SELL',color: Colors.red,),
-            table2(text1: 'STOCHRSI (14)',text2: '-53.6549',text3: 'SELL',color: Colors.red,),
-            table2(text1: 'MACD (12,26)',text2: '-53.6549',text3: 'BUY',color: Colors.blue,),
-            table2(text1: 'ADX (14)',text2: '-53.6549',text3: 'SELL',color: Colors.red,),
-            table2(text1: 'Williams %R',text2: '-53.6549',text3: 'SELL',color: Colors.red,),
-            table2(text1: 'CCI (14)',text2: '-53.6549',text3: 'SELL',color: Colors.red,),
-            table2(text1: 'ATR (14)',text2: '-53.6549',text3: 'SELL',color: Colors.red,),
-            table2(text1: 'High/Lows (14)',text2: '-53.6549',text3: 'SELL',color: Colors.red,),
-            table2(text1: 'Ultimate Oscillator',text2: '-53.6549',text3: 'SELL',color: Colors.red,),
-            table2(text1: 'ROC',text2: '-53.6549',text3: 'SELL',color: Colors.red,),
-            table2(text1: 'Bull/Bear Power (13)',text2: '-53.6549',text3: 'LESS VOLATAILE',color: Color(0xff595959),),
+            table2(text1: 'RSI',text2: '${Adata3[0]['value']}',text3: '${Adata3[0]['action']}',color: Colors.yellow,),
+            table2(text1: 'STOCH (9,6)',text2: '${Adata3[1]['value']}',text3: '${Adata3[1]['action']}',color: Colors.red,),
+            table2(text1: 'STOCHRSI (14)',text2: '${Adata3[2]['value']}',text3: '${Adata3[2]['action']}',color: Colors.red,),
+            table2(text1: 'MACD (12,26)',text2: '${Adata3[3]['value']}',text3: '${Adata3[3]['action']}',color: Colors.blue,),
+            table2(text1: 'ADX (14)',text2: '${Adata3[4]['value']}',text3: '${Adata3[4]['action']}',color: Colors.red,),
+            table2(text1: 'Williams %R',text2: '${Adata3[5]['value']}',text3: '${Adata3[5]['action']}',color: Colors.red,),
+            table2(text1: 'CCI (14)',text2: '${Adata3[6]['value']}',text3: '${Adata3[6]['action']}',color: Colors.red,),
+            table2(text1: 'ATR (14)',text2: '${Adata3[7]['value']}',text3: '${Adata3[7]['action']}',color: Colors.red,),
+            table2(text1: 'High/Lows (14)',text2: '${Adata3[8]['value']}',text3: '${Adata3[8]['action']}',color: Colors.red,),
+            table2(text1: 'Ultimate Oscillator',text2: '${Adata3[9]['value']}',text3: '${Adata3[9]['action']}',color: Colors.red,),
+            table2(text1: 'ROC',text2:'${Adata3[10]['value']}',text3: '${Adata3[10]['action']}',color: Colors.red,),
+            table2(text1: 'Bull/Bear Power (13)',text2:'${Adata3[11]['value']}',text3: '${Adata3[11]['action']}',color: Color(0xff595959),),
             Padding(
               padding: const EdgeInsets.only(left: 16,right: 16),
               child: Container(height: 48,width: 328,child: Center(child: Text('Pivot Points',style:TextStyle(fontSize: 16)))),
@@ -212,13 +217,13 @@ class front_screen extends StatelessWidget {
                 )
               ],
             ),
-            table3(text1: 'S3',text2: '456.87',),
-            table3(text1: 'S2',text2: '456.87',),
-            table3(text1: 'S1',text2: '456.87',),
-            table3(text1: 'Pivot Points',text2: '456.87',),
-            table3(text1: 'R1',text2: '456.87',),
-            table3(text1: 'R2',text2: '456.87',),
-            table3(text1: 'R3',text2: '456.87',),
+            table3(text1: 'S3',text2: '${Adata4['s3']}',),
+            table3(text1: 'S2',text2: '${Adata4['s2']}',),
+            table3(text1: 'S1',text2: '${Adata4['s1']}',),
+            table3(text1: 'Pivot Points',text2: '${Adata4['pivot_points']}',),
+            table3(text1: 'R1',text2: '${Adata4['r1']}',),
+            table3(text1: 'R2',text2: '${Adata4['r2']}',),
+            table3(text1: 'R3',text2: '${Adata4['r3']}',),
 
 
 
