@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'buttons.dart';
 import 'buttonX.dart';
+import 'front_screen.dart';
 class _SliderIndicatorPainter extends CustomPainter {
   final double position;
   _SliderIndicatorPainter(this.position);
@@ -150,7 +151,7 @@ class _ColorPickerState extends State<ColorPicker> {
     if(widget.time=="1min"||widget.time=="5min"||widget.time=="15min"){
       _colorSliderPosition = 30;
     }
-    if(widget.time=="30min"||widget.time=="1hr"||widget.time=="5hr"){
+    if(widget.time=="30min"||widget.time=="1hour"||widget.time=="5hour"){
       _colorSliderPosition = 100;
     }
     if(widget.time=="daily"||widget.time=="weekly"||widget.time=="monthly"){

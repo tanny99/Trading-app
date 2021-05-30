@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'front_screen.dart';
+import 'front_screen.dart' as f;
 import 'dart:io';
 import 'brain.dart';
 class buttonsX extends StatefulWidget {
@@ -35,36 +37,12 @@ class _buttonsXState extends State<buttonsX> {
       fillColor: widget.bodyColor,
       elevation: 0.0,
       highlightElevation: 0.0,
-      onPressed: (){
-
-          setState(() {
-
-
-
-              getData(widget.time);
-
-
-
-
-          });
-          setState(() {
-
-
-
-            getData(widget.time);
-
-
-
-
-          });
-
-        print(x);
-          Navigator.push(
-            context,
-              PageRouteBuilder(
-              pageBuilder: (_, __, ___) => front_screen(),
-        transitionDuration: Duration(microseconds: 0),
-        ),);
+      onPressed: ()async{
+        final a2=Provider.of<Updateprovider>(context,listen: false).a2;
+        final a3=Provider.of<Updateprovider>(context,listen: false).a3;
+        await Provider.of<Updateprovider>(context,listen: false).getData(widget.time,a2 , a3);
+        Provider.of<Updateprovider>(context,listen: false).changea1(widget.time);
+        print(widget.text);
       } ,
 
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0),side: BorderSide(color: aa[x])),
