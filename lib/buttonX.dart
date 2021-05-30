@@ -40,17 +40,20 @@ class _buttonsXState extends State<buttonsX> {
           setState(() {
 
 
-            if(x==0){
-              x=1;
-              getData(widget.time);
 
-            }
-            else{
-              x=0;
               getData(widget.time);
 
 
-            }
+
+
+          });
+          setState(() {
+
+
+
+            getData(widget.time);
+
+
 
 
           });

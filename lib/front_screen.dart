@@ -44,7 +44,7 @@ class _front_screenState extends State<front_screen> {
 
 
 
-            ColorPicker(200),
+            ColorPicker(width: 200,time: timex),
 
 
             SizedBox(height: 34),

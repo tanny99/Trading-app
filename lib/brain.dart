@@ -6,11 +6,12 @@ var Adata2;
 var Adata3;
 var Adata4;
 var Adata5,Adata6;
-
+var timex;
 
 Future getData(String time)async{
   Response response = await get(Uri.parse('https://api.bottomstreet.com/api/data?page=forex_detail&filter_name=identifier&filter_value=USDJPY'));
   var data=response.body;
+  timex=time;
   var k=await jsonDecode(data)['technical_indicator']['$time'];
   Adata =k['technical_indicator'];
   Adata2=k['moving_averages']['table_data']['exponential'];

@@ -34,7 +34,7 @@ class front_screen1 extends StatelessWidget {
             ],
           ),
 
-          ColorPicker(200),
+          ColorPicker(width: 200,time: '1min',),
 
 
           SizedBox(height: 34),
