@@ -122,7 +122,7 @@ bool isloading=false;
 
                               children: [
                                 SizedBox(height: 2),
-                                Text('${updateprovider.Adata['neutral']}',style: TextStyle(fontSize: 18),),
+                                Text('${updateprovider.Adata7}',style: TextStyle(fontSize: 18),),
                                 SizedBox(height: 2),
                                 Text('Neutral',style: TextStyle(fontSize: 18),),
                                 SizedBox(height: 2),

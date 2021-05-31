@@ -3,7 +3,7 @@ import 'package:http/http.dart';
 import 'dart:convert';
 
 class Updateprovider extends ChangeNotifier {
-  var Adata;
+  var Adata,Adata7;
   var Adata2;
   var Adata3;
   var Adata4;
@@ -31,7 +31,11 @@ class Updateprovider extends ChangeNotifier {
     timex = time;
     var k = await jsonDecode(data)['technical_indicator']['$time'];
     if (k != null) {
-      Adata = k['technical_indicator'];
+      Adata = k['moving_averages'];
+      Adata7 = k['moving_averages']['neutral'];
+      if(Adata7==null){
+        Adata7='-';
+      }
       Adata2 = k['moving_averages']['table_data']['$ExponentialOrSimple'];
       Adata3 = k['technical_indicator']['table_data'];
       Adata4 = k['pivot_points']['$pivots'];
