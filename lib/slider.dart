@@ -1,18 +1,38 @@
 import 'constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'brain.dart';
 import 'buttons.dart';
 import 'buttonX.dart';
+import 'package:provider/provider.dart';
 import 'front_screen.dart';
 class _SliderIndicatorPainter extends CustomPainter {
   final double position;
-  _SliderIndicatorPainter(this.position);
+  final Color color;
+  final String data;
+  _SliderIndicatorPainter({this.position,this.color,this.data});
   @override
   void paint(Canvas canvas, Size size) {
     canvas.drawCircle(
-        Offset(position, size.height / 2), 12, Paint()..color = Colors.white);
+        Offset(position, size.height / 2), 12, Paint()..color = color);
     canvas.drawCircle(
-        Offset(position, size.height/2 - 40 ), 20, Paint()..color = Colors.white);
+        Offset(position, size.height/2 - 45 ), 30, Paint()..color = color);
+    TextSpan span = new TextSpan(
+        text: '$data',
+        style: TextStyle(
+          fontWeight: FontWeight.w400,
+          fontSize: 16,
+          color: Colors.white,));
+    canvas.rotate(-1.59);
+    TextPainter tp = new TextPainter(
+        text: span,
+        textAlign: TextAlign.center,
+        textDirection: TextDirection.ltr);
+
+    tp.layout(minWidth: 14, maxWidth: 52);
+
+
+    tp.paint(canvas, Offset(12.0, position-12));
   }
   @override
   bool shouldRepaint(_SliderIndicatorPainter old) {
@@ -23,7 +43,8 @@ class ColorPicker extends StatefulWidget {
 
   final double width;
   final String time;
-  ColorPicker({this.width,this.time});
+  final String summary;
+  ColorPicker({this.width,this.time,this.summary});
   @override
   _ColorPickerState createState() => _ColorPickerState();
 }
@@ -39,23 +60,40 @@ class _ColorPickerState extends State<ColorPicker> {
   double _shadeSliderPosition;
   Color _currentColor;
   Color _shadedColor;
-
+  bool isloading=false;
   @override
   initState() {
     super.initState();
+
   }
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
     double _colorSliderPosition=0;
-    if(widget.time=="1min"||widget.time=="5min"||widget.time=="15min"){
+    Color color;
+    if(widget.time=="weekly"||widget.time=="1min"||widget.time=="monthly"||widget.time=="15min"||widget.time=="1hour"){
+      _colorSliderPosition = 10;
+      color=Color(0xff004999);
+    }
+    if(widget.time=="30min"){
       _colorSliderPosition = 30;
+      Color(0xff007AFF);
     }
-    if(widget.time=="30min"||widget.time=="1hour"||widget.time=="5hour"){
+    if(widget.time=="daily"||widget.time=="5min"){
       _colorSliderPosition = 100;
+      color=Color(0xffFEB846);
     }
-    if(widget.time=="daily"||widget.time=="weekly"||widget.time=="monthly"){
+    if(widget.time=="1min"){
       _colorSliderPosition = 150;
+      color=Color(0xffFF2E50);
+    }
+    if(widget.time=="5hour"||widget.time=="15min"||widget.time=="1hour"||widget.time=="30min"){
+      _colorSliderPosition = 170;
+      color=Colors.red[900];
     }
 
     return Row(
@@ -72,7 +110,7 @@ class _ColorPickerState extends State<ColorPicker> {
                 gradient: LinearGradient(colors: _colors),
               ),
               child: CustomPaint(
-                painter: _SliderIndicatorPainter(_colorSliderPosition),),
+                painter: _SliderIndicatorPainter(position: _colorSliderPosition,color: color,data: widget.summary),),
               ),
             ),
 

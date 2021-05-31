@@ -6,8 +6,8 @@ class Updateprovider extends ChangeNotifier {
   var Adata,Adata7;
   var Adata2;
   var Adata3;
-  var Adata4;
-  var Adata5, Adata6;
+  var Adata4,Adataa,Adataa2;
+  var Adata5, Adata6,Adata8;
   var timex;
   var a1='1min';
   var a2='classic';
@@ -32,7 +32,13 @@ class Updateprovider extends ChangeNotifier {
     var k = await jsonDecode(data)['technical_indicator']['$time'];
     if (k != null) {
       Adata = k['moving_averages'];
+      Adataa= k['technical_indicator'];
+      Adataa2= k['technical_indicator']['neutral'];
+      if(Adataa2==null){
+        Adataa2='-';
+      }
       Adata7 = k['moving_averages']['neutral'];
+      Adata8=k['summary']['summary_text'];
       if(Adata7==null){
         Adata7='-';
       }

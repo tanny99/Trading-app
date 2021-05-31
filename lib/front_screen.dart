@@ -89,7 +89,7 @@ bool isloading=false;
 
 
 
-                      ColorPicker(width:200,time:updateprovider.timex),
+                      ColorPicker(width:200,time:updateprovider.timex,summary: updateprovider.Adata8,),
 
 
                       SizedBox(height: 34),
@@ -189,7 +189,7 @@ bool isloading=false;
                             Column(
                               children: [
                                 SizedBox(height: 2),
-                                Text('${updateprovider.Adata['buy']}',style: TextStyle(fontSize: 18),),
+                                Text('${updateprovider.Adataa['buy']}',style: TextStyle(fontSize: 18),),
                                 SizedBox(height: 2),
                                 Text('Buy',style: TextStyle(fontSize: 18),),
                                 SizedBox(height: 2)
@@ -200,7 +200,7 @@ bool isloading=false;
 
                               children: [
                                 SizedBox(height: 2),
-                                Text('${updateprovider.Adata['neutral']}',style: TextStyle(fontSize: 18),),
+                                Text('${updateprovider.Adataa2}',style: TextStyle(fontSize: 18),),
                                 SizedBox(height: 2),
                                 Text('Neutral',style: TextStyle(fontSize: 18),),
                                 SizedBox(height: 2),
@@ -211,7 +211,7 @@ bool isloading=false;
 
                               children: [
                                 SizedBox(height: 2),
-                                Text('${updateprovider.Adata['sell']}',style: TextStyle(fontSize: 18),),
+                                Text('${updateprovider.Adataa['sell']}',style: TextStyle(fontSize: 18),),
                                 SizedBox(height: 2),
                                 Text('Sell',style: TextStyle(fontSize: 18),),
                                 SizedBox(height: 2),
